@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+	<runoob></runoob>	
+</div>
+
+<script>
+    var child={
+		template:'<h2>自定义组件2</h2>'
+    }
+    <!-- 注册全局组件 -->
+	Vue.component('runoob',{
+	   template: '<h1>自定义组件</h1>'
+	})
+
+	<!-- 创建实例 -->
+   new Vue ({
+    el: '#app'
+   })
+</script>
+</body>
+</html>

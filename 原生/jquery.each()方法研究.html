@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+function isArrayLike(obj) {
+
+    // Support: iOS 8.2 (not reproducible in simulator)
+    // `in` check used to prevent JIT error (gh-2145)
+    // hasOwn isn't used here due to false negatives
+    // regarding Nodelist length in IE
+    var length = !!obj && "length" in obj && obj.length,
+        type = jQuery.type(obj);
+
+    if (type === "function" || jQuery.isWindow(obj)) {
+        return false;
+    }
+
+    return type === "array" || length === 0 ||
+        typeof length === "number" && length > 0 && (length - 1) in obj;
+}
+var _eachObj = {
+
+    each: function(obj, callback) {
+        var length, i = 0;
+
+        if (isArrayLike(obj)) {
+            length = obj.length;
+            for (; i < length; i++) {
+                if (callback.call(obj[i], i, obj[i]) === false) {
+                    break;
+                }
+            }
+        } else {
+            for (i in obj) {
+                if (callback.call(obj[i], i, obj[i]) === false) {
+                    break;
+                }
+            }
+        }
+
+        return obj;
+    }
+}
+
+var obj={
+	a:1,
+	b:2,
+	c:3
+}
+
+_eachObj.each(obj,function(i){
+      console.log(i);
+})
+</script>
+
+</html>

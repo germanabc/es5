@@ -1,0 +1,646 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    font-family: 'Microsoft Yahei', "微软雅黑", Arial, STHeiti, sans-serif;
+    background: #fff;
+    font-size: 12px;
+    color: #e2e2e2;
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.swiper-wrapper {
+    z-index: 100;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+/*index*/
+
+.clear:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.block {
+    display: block;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.bg-wrap {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bg1 {
+    background-image: url(../images/1.png);
+}
+
+.bg3 {
+    background-image: url(../images/3.png);
+}
+
+.bg4 {
+    background-image: url(../images/4-6.png);
+}
+
+.bg5 {
+    background-image: url(../images/5.png);
+}
+
+.bg6 {
+    background-image: url(../images/6.png);
+}
+
+.bg7 {
+    background-image: url(../images/7.png);
+}
+
+.bg8 {
+    background-image: url(../images/8-6.png);
+}
+
+
+/*1*/
+
+.bg1 ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.title-wrap {
+    padding-top: 30px;
+}
+
+.bg1 ul li .itm {
+    -moz-box-flex: 1.0;
+    -webkit-box-flex: 1.0;
+    box-flex: 1.0;
+    padding: 0 5px;
+}
+
+.word {
+    color: #ffd200;
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+
+/*2*/
+
+.btns {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 38px;
+    z-index: 9;
+    left: 0;
+}
+
+.btns a {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    margin: 0 4px;
+    line-height: 40px;
+    color: #00b7ee;
+    font-size: 16px;
+    background: #fff076;
+}
+
+
+/*6*/
+
+
+/*8*/
+
+.button a {
+    display: block;
+    width: 276px;
+    height: 50px;
+    color: #fff;
+    background: #00b7ee;
+    font-size: 18px;
+    line-height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -138px;
+    bottom: 26px;
+    border-radius: 3px;
+}
+
+
+/*last-page*/
+
+.last-page {
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg.png);
+}
+
+.content-wrap {
+    padding: 0 10px;
+}
+
+.contact {
+    ;
+    background: #fff;
+    height: 136px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.lable-wrap {
+    width: 10%;
+    min-width: 26px;
+    float: left;
+}
+
+.infos {
+    padding-top: 6px;
+    width: 90%;
+    float: left;
+}
+
+div.lable {
+    color: #fe9b01;
+    font-size: 16px;
+    background: #cbdbdc;
+    width: 20px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.itm {
+    margin: 5px 0px;
+    font-size: 0px;
+}
+
+span.lable {
+    width: 15%;
+    min-width: 36px;
+    display: inline-block;
+    font-size: 12px;
+    color: #5c7577;
+    position: relative;
+}
+
+span.info {
+    width: 85%;
+    display: inline-block;
+    text-align: left;
+}
+
+.lable b {
+    position: absolute;
+    left: -5px;
+    top: 1px;
+}
+
+.info input {
+    width: 90%;
+    line-height: 18px;
+}
+
+.submit button {
+    font-size: 14px;
+    color: #fe9b01;
+    width: 100px;
+    height: 24px;
+    border-radius: 3px;
+    border: none;
+    background: #cbdbdc;
+}
+
+
+/*fix-contact*/
+
+.fix-contact {
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+    height: 20px;
+    z-index: 200;
+}
+
+a.block {
+    position: absolute;
+    z-index: 10;
+    font-size: 12px;
+    color: #e2e2e2;
+    text-align: center;
+}
+
+.call {
+    left: 4px;
+    bottom: 74px;
+}
+
+.refer {
+    left: 4px;
+    bottom: 4px;
+}
+
+.call img,
+.refer img {
+    width: 50px;
+    height: 50px;
+    margin-top: 6px;
+}
+
+.slide {
+    text-align: center;
+    position: absolute;
+    bottom: 14px;
+    background: 2px;
+    width: 100%;
+    filter: glow(color=#FF0000, strength=18);
+    color: #ffffff;
+}
+
+.slide p {
+    position: relative;
+}
+
+.slide img {
+    width: 11px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    top: 17px;
+}
+
+#doyoo_panel {
+    display: none !important;
+}
+
+
+/*����*/
+
+.bg10 {
+    background-image: url(../images/10.png);
+}
+
+.bg11 {
+    background-image: url(../images/11.png);
+}
+
+.bg12 {
+    background-image: url(../images/12.png);
+}
+
+.bg13 {
+    background-image: url(../images/13.png);
+}
+
+.bg7 {
+    background-image: url(../images/1-4.png);
+}
+
+a.block {
+    position: absolute;
+    z-index: 10;
+    font-size: 12px;
+    color: #e2e2e2;
+    text-align: center;
+}
+
+a.block.call {
+    left: 4px;
+    bottom: 170px;
+}
+
+a.block.refer {
+    left: 4px;
+    bottom: 115px;
+}
+
+a.block.register {
+    left: 4px;
+    bottom: 60px;
+}
+
+a.block.about-us {
+    left: 4px;
+    bottom: 5px;
+}
+
+.call img,
+.refer img,
+.register img,
+.about-us img {
+    width: 50px;
+    height: 50px;
+    margin-top: 6px;
+}
+
+.num12 .block {
+    width: 100%;
+    height: 32%;
+    left: 0;
+    bottom: 0;
+}
+
+.contact-us h1 {
+    line-height: 24px;
+    padding: 0 10px;
+    color: #474747;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.contact-us p {
+    line-height: 18px;
+    padding: 0 10px;
+    color: #949494;
+    font-size: 12px;
+}
+
+
+/*新加*/
+
+
+/*bg-2 bg-5 bg-7 bg7*/
+
+.bg-2 {
+    background-image: url("../images/1-2.png");
+}
+
+.bg-5 {
+    background-image: url("../images/1-5.png");
+}
+
+.bg-7 {
+    background-image: url("../images/1-7.png");
+}
+
+.bg-coment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.bg-top {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1.3;
+    flex: 1.3;
+}
+
+.bg-coment form {
+    padding: 0 45px;
+    padding-left: 60px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    /*
+   
+    position:absolute; 
+    bottom:1rem;
+    left:0px; 
+*/
+    width: 100%;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 0.7;
+    flex: 0.7;
+}
+
+.bg-coment input[type=text] {
+    width: 100%;
+    font-size: 1rem;
+    color: #BBBBBB;
+    padding-left: 10px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.bg-coment input[type=button] {
+    width: 100%;
+    font-size: 25px;
+    color: #E00003;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: #FFD83E;
+    outline: none;
+    border: none;
+    height: 40px;
+}
+
+
+/*结束*/
+
+
+/*add*/
+
+.bg14 {
+    background-image: url(../images/14.png);
+}
+
+.bg15 {
+    background-image: url(../images/15.png);
+}
+
+.bg16 {
+    background-image: url(../images/16.png);
+}
+
+.bg17 {
+    background-image: url(../images/17.png);
+}
+
+.bg18 {
+    background-image: url(../images/18.png);
+}
+
+
+/*b-新加  修改按钮样式*/
+
+.b-fix-contact {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #434A54;
+    bottom: 0;
+}
+
+.b-fix-contact div {
+    width: 33%;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.b-fix-contact .bimg-1 {
+    border-right: 1px solid #262D36;
+}
+
+.b-fix-contact .bimg-2 {
+    border-right: 1px solid #262D36;
+    border-left: 1px solid #646C77;
+}
+
+.b-fix-contact .bimg-3 {
+    border-left: 1px solid #646C77;
+}
+
+.b-fix-contact a.block {
+    width: 110px;
+    height: 28px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -55px;
+    margin-top: -14px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.b-fix-contact img {
+    height: 100%;
+    width: 28px;
+    vertical-align: middle;
+    margin: 0;
+}
+/*b-新加  修改按钮样式结束*/
+
+/*瀑布流修改*/
+.swiper-wrapper{
+   /*height: 14007px;*/
+}
+
+.swiper-slide1{
+    height: 667px;
+}
+.swiper-slide2{
+    height: 667px;
+}
+.swiper-slide3{
+    height: 667px;
+}
+
+.swiper-slide4{
+    height: 667px;
+}
+.swiper-slide5{
+    height: 667px;
+}
+.swiper-slide6{
+    height: 667px;
+}
+
+
+.swiper-slide7{
+    height: 667px;
+}
+.swiper-slide8{
+    height: 667px;
+}
+.swiper-slide9{
+    height: 667px;
+}
+
+.swiper-slide10{
+    height: 667px;
+}
+.swiper-slide11{
+    height: 667px;
+}
+.swiper-slide12{
+    height: 667px;
+}
+
+
+.swiper-slide13{
+    height: 667px;
+}
+.swiper-slide14{
+    height: 667px;
+}
+.swiper-slide15{
+    height: 667px;
+}
+
+.swiper-slide16{
+    height: 667px;
+}
+.swiper-slide17{
+    height: 667px;
+}
+.swiper-slide18{
+    height: 667px;
+}
+
+/*.swiper-slide19{
+    height: 667px;
+}
+*/
+
+/*瀑布流修改结束*/
+ 

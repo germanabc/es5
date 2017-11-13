@@ -1,0 +1,97 @@
+.windowUp{
+	width: 703px;
+	height: 439px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	display: none;
+	margin-left: -351px;
+	margin-top: -219px;
+	z-index: 1000;
+	background: url('../images/windowUp.jpg');
+}
+.windowUp .btnWrap{
+	width: 300px;
+	height: 45px;
+	margin: 289px 0 0 100px;
+}
+.windowUp .btnWrap .btn{
+	width: 140px;
+	height: 45px;
+	font-family: "Microsoft YaHei","微软雅黑";
+	color: #ffffff;
+	font-size: 20px;
+	line-height: 45px;
+	text-align: center;
+	background: #4587d6;
+}
+.windowUp .btnWrap .fl:hover{
+	background: #5496e5;
+}
+.windowUp .btnWrap .fr{
+	background: #e24747;
+}
+.windowUp .btnWrap .fr:hover{
+	background: #ef5454;
+}
+.windowUp .close{
+	width: 29px;
+	height: 29px;
+	position: absolute;
+	right: -10px;
+	top: -12px;
+	cursor: pointer;
+	background: url('../images/close.png');
+}
+.leftUp{
+	width: 199px;
+	height: 574px;
+	position: fixed;
+	left: 0px;
+	top: 50%;
+	margin-top: -287px;
+}
+.leftUp img{
+	display: block;
+}
+.leftUp .con{
+	width: 180px;
+	height: 404px;
+	margin-left: 19px;
+}
+.leftUp .con ul{
+	margin-bottom: 6px;
+	padding: 14px 0 11px 0;
+	background: #4e9dcb;
+}
+.leftUp .con ul li{
+	width: 160px;
+	height: 35px;
+	margin: 0 auto;
+	background: #17647e;
+	color: #f7f5f5;
+	font-size: 15px;
+	text-align: center;
+	line-height: 35px;
+	margin-bottom: 2px;
+	font-family: "Microsoft YaHei","微软雅黑";
+}
+.leftUp .con ul li:hover{
+	background: #22718c;
+}
+.leftUp .return_top{
+	width: 122px;
+	height: 32px;
+	cursor: pointer;
+	line-height: 30px;
+	background: #4e9dcb;
+	margin: 0 auto;
+	text-align: center;
+}
+.leftUp .return_top:hover{
+	background: #59a8d7;
+}
+.leftUp .return_top img{
+	display: inline-block;
+	vertical-align: middle;
+}

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--<script type="text/javascript" src="js/html5.js"></script>-->
+    <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+    <title>关于我们</title>
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e23da8729371a8208597067d4c986ad0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        function gotoRegister(){
+            var url='http://manage.yunduoketang.com/register/registerPage';
+            var params=location.href.split("?")[1];
+            if(params){
+                url+='?'+params;
+                url+="&utm_url="+encodeURI(location.href);
+            }
+
+            //location.href=url;
+            window.open(url);
+        }
+        function gotoOffer() {
+            var url = 'price.html';
+            var params = location.href.split("?")[1];
+            if (params) {
+                url += '?' + params;
+                url += "&utm_url=" + encodeURI(location.href);
+            }
+
+            //location.href=url;
+            window.open(url);
+        }
+
+
+//        $(document).on("scroll",function(){
+//            var scrollTop = $(document).scrollTop();
+//            if(scrollTop>=422){
+//                $(".nav").addClass("nav2");
+//            }else{
+//                $(".nav").removeClass("nav2");
+//            }
+//        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="nav w1259 nav2">
+        <div class="logo"><img src="images/logo.png"></div>
+        <div class="links">
+            <a href="#" class="">首页</a>
+            <a href="#live" class="">在线直播 </a>
+            <a href="#test" class="">在线考试</a>
+            <a href="#erp" class="">教学ERP</a>
+            <a href="javascript:gotoOffer()" class="">服务报价</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:gotoRegister();" class="free-register" style="border:solid 2px #fff;border-radius:5px;">免费注册</a>
+            <a href="http://manage.yunduoketang.com/login" target="_blank" class="">登录</a>
+            <b href="javascript:;" style="color:#fff;"><img src="images/phone_ico.png" style="margin:3px 10px -2px 30px">400-079-6570</b>
+        </div>
+    </div>
+</header>
+<div class="contents">
+    <div class="us-pic">
+        <div class="us-pic-info"></div>
+    </div>
+    <div class="about-us">
+        <div class="about-title">关于我们</div>
+        <div class="about-contents">云朵课堂隶属于北京柯松信息科技有限公司，我们提供一站式服务，独立网校系统、带宽、服务器，运维投管可全部由我们提供，您只需要提供域名，即刻拥有自己的在线教育网校。云朵课堂在线教育技术提供商，提供一个低成本做在线教育整体解决方案，帮您打破所有技术壁垒， 最大限度地降低了建立网校的技术和资金门槛，功能包含在线直播教学、高清录播课程、考试题库、 智能排课、教学管理、问答社区、名师管理、会员积分等支持PC、移动端APP、微信网校，产品按需付费、成本可控，让您最小成本搭建自己独立域名的网校平台</div>
+
+    </div>
+</div>
+<div class="footer">
+    <div class="info clear">
+        <div class="left">
+            <h1>24小时服务热线：400-079-6570</h1>
+            <P>email:sales@yuuxin.com</P>
+
+            <P>地址：北京市海淀区中关村软件园23号楼207</P>
+            <div class="tab-box">
+                <span class="in-block tab1"></span>
+                <span class="in-block tab2"></span>
+                <span class="in-block tab3"></span>
+                <span class="in-block tab4"></span>
+                <span class="in-block tab5"></span>
+            </div>
+        </div>
+        <div class="right">
+            <p>
+                <a href="aboutus.html">关于我们 </a>
+                <span>|</span>
+                <a href="">产品服务</a>
+                <span>|</span>
+                <a href="">服务报价</a>
+                <span>|</span>
+                <a href="">成功案例</a>
+            </p>
+            <p>
+                <img src="images/logo.png" class="mt30" alt=""/>
+            </p>
+        </div>
+    </div>
+    <div class="copr">
+        Copyright 2014-2015.北京柯松信息科技有限公司　版权所有
+    </div>
+</div>
+
+</body>
+</html>

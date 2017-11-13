@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="pagination.css">
+    <style type="text/css">
+    body {
+        font-size: 84%;
+        color: #333333;
+        line-height: 1.4;
+    }
+
+    a {
+        color: #34538b;
+    }
+
+    #Searchresult {
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+        background: #f0f3f9;
+    }
+    </style>
+
+
+    
+</head>
+
+<body>
+    <h1>jQuery Pagination分页插件demo</h1>
+    <div id="Pagination" class="pagination"><span class="current prev">Prev</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><span>...</span><a href="#">8</a><a href="#" class="next">Next</a></div>
+    <div id="Searchresult">
+        <div class="result">第1项内容</div>
+    </div>
+    <div id="hiddenresult" style="display:none;">
+        <!-- 列表元素 -->
+        <div class="result">第1项内容</div>
+        <div class="result">第2项内容</div>
+        <div class="result">第3项内容</div>
+        <div class="result">第4项内容</div>
+        <div class="result">第5项内容</div>
+        <div class="result">第6项内容</div>
+        <div class="result">第7项内容</div>
+        <div class="result">第8项内容</div>
+    </div>
+    <p>Copyright © <a href="http://www.zhangxinxu.com/wordpress/">张鑫旭-鑫空间-鑫生活</a></p>
+</body>
+
+   <script src="../../jquery.min.js"></script>
+    <script src="pagination.js"></script>
+    <script>
+    $(function() {
+        //这是一个非常简单的demo实例，让列表元素分页显示
+        //回调函数的作用是显示对应分页的列表项内容
+        //回调函数在用户每次点击分页链接的时候执行
+        //参数page_index{int整型}表示当前的索引页
+        var initPagination = function() {
+            var num_entries = $("#hiddenresult div.result").length;
+            // 创建分页
+            $("#Pagination").pagination(28, {
+                num_edge_entries: 2, //首尾两侧边缘显示页数
+                num_display_entries: 4, //中间主体显示页数
+                items_per_page: 1,//每页显示1项
+                current_page: 0,
+                prev_text: '上一页',
+                next_text: '下一页',
+                ellipse_text: '===',
+                // prev_show_always: false,
+                // link_to: 'http://www.taobao.com',
+                link_to: 'javascripts:void(0)',
+                // next_show_always: false,
+                callback: pageselectCallback
+            });
+        }();
+
+        function pageselectCallback(page_index, jq) {
+            var new_content = $("#hiddenresult div.result:eq(" + page_index + ")").clone();
+            $("#Searchresult").empty().append(new_content); //装载对应分页的内容
+            return false;
+        }
+    });
+    </script>
+
+</html>

@@ -1,0 +1,29 @@
+*{
+	padding:0;
+	margin:0;
+}
+body,html{
+	max-width:640px;
+	margin:0 auto;
+	font-family:"Microsoft YaHei",Arial;
+}
+body{
+	background:#f8f8f8;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration:none;
+}
+img{
+	display:block;
+	width:100%;
+}
+.xuanfu{
+    position: fixed;  
+    display:block;
+    bottom: 0;
+    width: 100%;  
+    z-index: 100;  
+}  

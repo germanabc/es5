@@ -1,0 +1,41 @@
+
+/* 文件夹内容样式 */
+
+.folderdiv {
+    /*width: 820px;
+    float: left;*/
+    font: 14px "Microsoft YaHei","宋体",san-serif;
+}
+
+.folderdiv h1 {
+    font-size: 28px;
+    line-height: 200%;
+    text-align: center;
+}
+.folderdiv img{
+max-width: 100%;height: auto!important;width:expression(this.width > 750 ? "750px" : this.width)!important;
+}  
+.folderdiv #CurrentlyText {
+    display: block;
+    padding: 15px 0 40px;
+    line-height: 200%;
+    text-align: left;
+    height: auto !important;
+    min-height: 350px
+}
+
+.folderdiv #CurrentlyText p {
+    margin-bottom: 20px
+}
+.folderdiv #CurrentlyText table{width:100% !important}
+.folderdiv #CurrentlyText table,
+.folderdiv #CurrentlyText td {
+    border-collapse: collapse;
+}
+    
+.folderdiv #CurrentlyText td {
+    border: solid 1px #ddd;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+    

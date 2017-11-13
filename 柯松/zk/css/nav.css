@@ -1,0 +1,157 @@
+@charset "utf-8";
+.chat{
+	cursor: pointer;
+}
+.header{
+	height: 90px;
+	width: 100%;
+	background: #e8e8e8;
+}
+.header img{
+	margin: 20px 0 0 10px;
+}
+.nav{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #2e2d2d;
+}
+.nav ul{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+}
+.nav ul li{
+	float: left;
+	margin: 0 8px;
+	position: relative;
+}
+.nav ul li a{
+	display: block;
+	padding: 0 20px;
+	line-height: 50px;
+	background: #2e2d2d;
+}
+.nav ul li a:hover{
+	background: #e24747;
+}
+.nav ul li .current{
+	background: #e24747;
+}
+.nav ul li a img{
+	vertical-align: middle;
+}
+.nav ul #zt{
+	position: relative;
+}
+.nav ul li .xiala{
+	width: 100%;
+	height: 203px;
+	display: none;
+    position: absolute;
+    z-index: 100;
+}
+.nav ul li .xiala div{
+	width: 100%;
+	text-align: center;
+	margin-top: 1px;
+	height: 50px;
+	line-height: 50px;
+}
+.nav ul li .xiala div a{
+	background: #e24747;
+}
+.nav ul li .xiala div a:hover{
+	background: #f95d5d;
+}
+.version div{
+	padding: 25px 0 0 38px;
+}
+.version .phone{
+	margin: 15px 0 15px 38px;
+}
+.version div .p_2{
+	margin-left: 520px;
+}
+.bottom{
+	background: #353b49;
+	padding-bottom: 50px;
+}
+.bottom .wrap{
+	padding: 30px 0 70px 0;
+	overflow: hidden;
+	position: relative;
+}
+.bottom .wrap .link{
+	position: absolute;
+	width: 345px;
+    height: 150px;
+    top: 30px;
+    left: 40px;
+}
+.bottom .wrap .link .fl{
+	width: 137px;
+	height: 23px;
+    margin-bottom: 12px;
+}
+.bottom .wrap .link .fr{
+	width: 85px;
+	height: 23px;
+    margin-bottom: 12px;
+}
+.bottom .wrap .link a{
+	display: block;
+	height: 23px;
+}
+.bottom .left{
+	margin-right: 125px;
+	margin-left: 40px;
+}
+.bottom .right{
+	width: 166px;
+	margin-right: 138px;
+	padding-top: 5px;
+}
+.bottom .btn{
+	color: #ffffff;
+	font-size: 15px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	text-decoration: none;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #e24747;
+	display: block;
+	margin-top: 35px;
+	font-family: "Microsoft YaHei","微软雅黑";
+}
+.bottom .btn:hover{
+	background: #f95d5d;
+}
+.bottom .zs{
+	display: block;
+	margin: 0 auto;
+}
+.content{
+	width: 775px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-top: 30px;
+}
+.ps{
+	width: 100%;
+	border-bottom: 1px solid #e7e3e3;
+}
+.ps p{
+	font-size: 14px;
+	font-family: "宋体";
+	color: #3d3d3d;
+	font-weight: bold;
+    width: 775px;
+    margin: 20px auto 25px;
+}
