@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<style>
+/*first way*/
+
+.box_center1 {
+    display: table-cell;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ccc;
+}
+
+.box_center1 .inner {
+    display: inline-block;
+    background-color: pink;
+}
+
+
+/*two way*/
+
+.box_center2 {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+.box_center2 .inner {
+    display: inline-block;
+    background-color: green;
+}
+
+.box_center2 .placeholder {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+/*three way*/
+
+.box_center3 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.box_center3 em {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    background: red;
+}
+
+
+/*four way*/
+
+.box_center4 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.box_center4 em {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: gray;
+}
+
+/*five way*/
+.box_center5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.test{
+   /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);*/
+     display: inline-block; 
+    padding: 5px 15px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1;
+    border-radius: 12px;
+color: #fff;
+    background-color: #07bbee;
+}
+</style>
+
+<body>
+    <!-- first way-->
+    <!-- 1.表格方法：表格内容本来就是垂直居中的，可以通过模拟表格处理。 -->
+    <div class="box_center1">
+        <div class="inner">123</div>
+    </div>
+    <!-- two way-->
+    <!-- 2.vertical-align: middle实现方法：利用空元素占位实现 -->
+    <div class="box_center2">
+        <div class="placeholder"></div>
+        <div class="inner">123</div>
+    </div>
+    <!-- three way-->
+    <div class="box_center3">
+        <em>123</em>
+    </div>
+    <!--four way  -->
+    <div class="box_center4">
+        <em>123</em>
+    </div>
+    <!--four way  -->
+    <div class="box_center5">
+        567
+    </div>
+
+
+    <span class="test">作品</span>
+</body>
+
+</html>
