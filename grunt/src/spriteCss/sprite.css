@@ -1,0 +1,26 @@
+/*
+* @Author: shawn
+* @Date:   2018-02-28 14:31:14
+* @Last Modified by:   shawn
+* @Last Modified time: 2018-02-28 14:41:10
+*/
+div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.a {
+    background-image: url(../images/a.png);
+}
+
+.b {
+    background-image: url(../images/b.png);
+}
+
+.c {
+    background-image: url(../images/c.png);
+}
