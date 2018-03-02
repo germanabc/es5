@@ -2,7 +2,7 @@
 * @Author: shawn
 * @Date:   2018-03-01 17:09:10
 * @Last Modified by:   shawn
-* @Last Modified time: 2018-03-02 10:16:28
+* @Last Modified time: 2018-03-02 19:01:28
 */
 
 * {
@@ -121,6 +121,20 @@ body {
 .pulldown-tips {
     position: absolute;
     top: -40px;
+    left: 0;
+    width: 100%;
+}
+
+/*==========*/
+.pullup-tips {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.pullup-tips {
+    position: absolute;
+    bottom: -40px;
     left: 0;
     width: 100%;
 }
