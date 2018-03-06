@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slot2-my.html</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa>
+			<ul>
+				<li>1111</li>
+				<li>2222</li>
+				<li>3333</li>
+			</ul>
+			<div>保存</div>
+		</aaa>
+		<hr>
+		<aaa>
+		</aaa>
+	</div>
+	<template id="aaa">
+		<h1>xxxx</h1>
+
+		<!-- solt 是槽口，如果没有槽口，组件里面的自己写的元素将被模板替换，有的话自己写的元素正常显示 -->
+		<slot>这是默认的情况</slot>
+		<p>welcome vue</p>
+	</template>
+
+	<script>
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					template:'#aaa'
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>
