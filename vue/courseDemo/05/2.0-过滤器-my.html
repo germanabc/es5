@@ -1,28 +1,26 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>智能社——http://www.zhinengshe.com</title>
+    <title>2.0-过滤器-my</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <style>
 
     </style>
-    <script src="vue1.0.js"></script>
+    <script src="vue.js"></script>
     <script>
+	    Vue.filter('todo',function(n,a,b){
+	    	alert(a+','+b)
+	         return n<10? '0'+n: n;
+	    })
         window.onload=function(){
             new Vue({
                 el:'#box',
                 data:{
-                    list:['width','height','border']
-                },
-                methods:{
-                    add(){
-                        this.list.push('background');
-                    }
+                    msg:9
                 }
             });
         };
@@ -30,12 +28,7 @@
 </head>
 <body>
     <div id="box">
-        <input type="button" value="添加" @click="add">
-        <ul>
-            <li v-for="val in list" track-by="$index">
-                {{val}}
-            </li>
-        </ul>
+       {{msg | todo('12','5')}}
     </div>
 </body>
 </html>
