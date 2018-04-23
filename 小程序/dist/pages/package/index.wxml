@@ -1,0 +1,67 @@
+
+<view class="search">
+  <view bindtap="changeSearch" class="search_input">输入关键词搜索</view>
+  <view bindtap="showmenu" class="cancel"></view>
+</view>
+<view bindtouchstart="touchStart" bindtouchend="touchStart" class="class">
+  <view wx:if="{{classList}}" animation="{{animationData}}" class="list">
+    <view wx:for="{{classList}}" bindtap="getClassInfo" data-id="{{item.id}}" data-cid="{{item.itemOneId}}" class="box {{item.open? 'show': 'hide' }}">
+      <view class="cover">
+        <image src="{{item.cover}}" mode="widthFix"></image>
+      </view>
+      <view class="content"> 
+        <view class="name">{{item.name}}</view>
+        <view class="info">
+          <view class="price{{item.realPrice == 0?' free':''}}">{{item.realPrice == 0?'免费': '￥'+item.realPrice}}
+            <view class="del">{{item.oldRealPrice == 0?'':'￥'+ item.oldRealPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showMenu}}" class="menus">
+  <view class="menus-content">
+    <scroll-view scroll-y="scroll-y" class="menus_select">
+      <view class="warp-box">
+        <view class="menus-title">一级分类
+          <view wx:if="{{showmore}}" data-id="showmore" bindtap="showmoremenus" class="showmore"></view>
+        </view>
+        <view class="menus-list {{showmore?'showmore':''}}">
+          <view wx:for="{{type}}" data-id="{{item.id}}" data-index="{{index}}" data-title="{{item.name}}" bindtap="changeMenu" class="menus-sub {{item.open? 'active' : ''}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view wx:if="{{sub.length}}" class="warp-box">
+        <view class="menus-title">二级分类
+          <view wx:if="{{showmoresub}}" data-id="showmoresub" bindtap="showmoremenus" class="showmore"></view>
+        </view>
+        <view class="menus-list {{showmoresub?'showmore':''}}">
+          <view wx:if="{{sub.length}}" data-id="0" bindtap="changeMenu" data-title="全部" data-index="-1" data-sub="true" class="menus-sub {{!subactive?'active':''}}">全部</view>
+          <view wx:if="{{sub.length}}" wx:for="{{sub}}" bindtap="changeMenu" data-id="{{item.id}}" data-title="{{item.name}}" data-index="{{index}}" data-sub="true" class="menus-sub {{subactive == item.id?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view wx:if="{{three.length}}" class="warp-box">
+        <view class="menus-title">三级分类
+          <view wx:if="{{showmoresub}}" data-id="showmoresub" bindtap="showmoremenus" class="showmore"></view>
+        </view>
+        <view class="menus-list {{showmoresub?'showmore':''}}">
+          <view wx:if="{{three.length}}" data-id="0" bindtap="changeMenu" data-title="全部" data-index="-1" data-three="true" class="menus-sub {{!threeactive?'active':''}}">全部</view>
+          <view wx:if="{{three.length}}" wx:for="{{three}}" bindtap="changeMenu" data-id="{{item.id}}" data-title="{{item.name}}" data-index="{{index}}" data-three="true" class="menus-sub {{threeactive == item.id?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view class="warp-box">
+        <view class="menus-title">排序方式</view>
+        <view class="menus-list">
+          <view bindtap="selecttype" data-type="rank" data-id="0" class="menus-sub {{ranktype==0||!ranktype?'active':''}}">综合</view>
+          <view bindtap="selecttype" data-type="rank" data-id="1" class="menus-sub {{ranktype==1?'active':''}}">最热</view>
+          <view bindtap="selecttype" data-type="rank" data-id="2" class="menus-sub {{ranktype==2?'active':''}}">最新</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view bindtap="changeSelectMenu" class="menus_btn_ground">
+      <view data-type="reset" class="menus_btn">重置</view>
+      <view data-type="submit" class="menus_btn primary">完成</view>
+    </view>
+  </view>
+</view>
+<include src="../footer.wxml"></include>

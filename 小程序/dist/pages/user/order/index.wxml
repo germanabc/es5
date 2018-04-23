@@ -1,0 +1,45 @@
+
+<view bindtap="changeTab" class="swiper-tab">
+  <view data-index="0" data-value="全部" class="swiper-tab-list {{currentTab==0? 'active':''}}">全部
+    <view data-index="0" data-value="全部" class="small">(999)</view>
+  </view>
+  <view data-index="1" data-value="支付成功" class="swiper-tab-list {{currentTab==1? 'active':''}}">已完成
+    <view data-index="1" data-value="支付成功" class="small">(999)</view>
+  </view>
+  <view data-index="2" data-value="未支付" class="swiper-tab-list {{currentTab==2? 'active':''}}">未完成
+    <view data-index="2" data-value="未支付" class="small">(999)</view>
+  </view>
+  <view data-index="3" data-value="支付失败" class="swiper-tab-list {{currentTab==3? 'active':''}}">已失效
+    <view data-index="3" data-value="支付失败" class="small">(999)</view>
+  </view>
+</view>
+<view wx:if="{{orderList}}" class="order">
+  <view wx:if="{{resultList.length}}" class="list">
+    <view wx:for="{{resultList}}" bindtap="getClassInfo" data-id="{{item.orderNum}}" class="box">
+      <view class="content"> 
+        <view class="name">商品名:</view>
+        <view class="value">{{item.commodityName}}</view>
+      </view>
+      <view class="content"> 
+        <view class="name">订单号:</view>
+        <view class="value">{{item.orderNum}}</view>
+      </view>
+      <view class="content"> 
+        <view class="name">商品价:</view>
+        <view class="value">{{item.payPrice}}</view>
+      </view>
+      <view class="content"> 
+        <view class="name">订单状态:</view>
+        <view class="value {{item.payStatus=='支付成功'?'primary':'danger'}}">{{item.payStatus}}</view>
+      </view>
+      <view class="content"> 
+        <view class="name">下单时间:</view>
+        <view class="value">{{item.orderTime}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else="wx:else" class="list none">
+    <view class="nothing">没有此类订单</view>
+  </view>
+</view>
+<include src="../../footer.wxml"></include>

@@ -1,0 +1,86 @@
+
+<swiper wx:if="{{swiperShow}}" autoplay="{{swiper.autoplay}}" indicator-dots="{{swiper.indicatordots}}" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(255,255,255,1)" circular="{{swiper.circular}}" previous-margin="30px" next-margin="30px" bindchange="" class="swiper">
+  <swiper-item wx:for="{{pics}}" class="item">
+    <view class="item-shadow"></view>
+    <view class="item-content">
+      <image src="{{item.src}}" class="image"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<view wx:if="{{openCourse}}" class="wrap">
+  <view class="title">
+    <view class="heading">公开课</view>
+    <navigator url="/pages/public/class" class="navigator"> 更多</navigator>
+  </view>
+  <view class="content">
+    <view wx:for="{{openCourseList}}" data-id="{{item.classTypeId}}" data-title="{{item.name}}" bindlongpress="showTitle" bindtap="linkClassinfo" class="box">
+      <view class="images">
+        <image src="{{item.cover||'../../images/default_img.jpg'}}"></image>
+      </view>
+      <view class="title"> {{item.name}}</view>
+      <view class="info">
+        <view class="user">{{item.buyNum}}</view>
+        <view class="price{{item.realPrice == 0?' free':''}}">{{item.realPrice == 0?'免费': '￥'+item.realPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{recomCourse}}" class="wrap first">
+  <view class="title">
+    <view class="heading">推荐课程</view>
+    <navigator url="/pages/public/class" class="navigator"> 更多</navigator>
+  </view>
+  <view class="content">
+    <view wx:for="{{recomCourseList}}" data-id="{{item.classTypeId}}" data-type="{{item.classtype}}" data-title="{{item.name}}" bindtap="linkClassinfo" class="box">
+      <view class="images">
+        <image src="{{item.cover||'../../images/default_img.jpg'}}"></image>
+      </view>
+      <view class="title"> {{item.name}}</view>
+      <view class="info">
+        <view class="price{{item.realPrice == 0?' free':''}}">{{item.realPrice == 0?'免费': '￥'+ item.realPrice }}</view>
+        <view wx:if="{{item.realPrice != 0}}" class="old">{{'￥'+ item.originalPrice }}</view>
+      </view>
+    </view>
+  </view>
+  <view bindtap="getClassMore" class="more">查看更多</view>
+</view>
+<view wx:if="{{vipCourse}}" class="wrap">
+  <view class="title">
+    <view class="heading">会员课程</view>
+    <navigator url="/pages/public/class" class="navigator"> 更多</navigator>
+  </view>
+  <view class="content">
+    <view wx:for="{{vipCourseList}}" data-id="{{item.classTypeId}}" data-title="{{item.name}}" bindlongpress="showTitle" bindtap="linkClassinfo" class="box">
+      <view class="images">
+        <image src="{{item.cover||'../../images/default_img.jpg'}}"></image>
+      </view>
+      <view class="title"> {{item.name}}</view>
+      <view class="info">
+        <view class="user">{{item.buyNum}}</view>
+        <view class="price{{item.realPrice == 0?' free':''}}">{{item.realPrice == 0?'免费': '￥'+item.realPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{recomClassPackage}}" class="wrap">
+  <view class="title">
+    <view class="heading">推荐课程包</view>
+    <navigator url="/pages/public/class" class="navigator"> 更多</navigator>
+  </view>
+  <view class="content full">
+    <view wx:for="{{recomClassPackageList}}" class="box">
+      <view class="images">
+        <image src="{{item.cover||'../../images/default_img.jpg'}}"></image>
+        <image src="{{item.cover||'../../images/default_img.jpg'}}" class="images-1"></image>
+        <image src="{{item.cover||'../../images/default_img.jpg'}}" class="images-2"></image>
+      </view>
+      <view class="title"> {{item.name}}</view>
+      <view class="info">
+        <view class="price{{item.realPrice == 0?' free':''}}">{{item.realPrice == 0?'免费': '￥'+ item.realPrice }}</view>
+        <view wx:if="{{item.realPrice != 0}}" class="old">{{'￥'+ item.originalPrice }}</view>
+      </view>
+    </view>
+  </view>
+  <view bindtap="getClassMorePackage" class="more">查看更多</view>
+</view>
+<include src="../footer.wxml"></include>

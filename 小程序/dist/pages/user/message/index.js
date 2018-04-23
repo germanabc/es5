@@ -1,0 +1,1 @@
+Page({data:{menu:[],pageIndex:2,member:!1},onLoad:function(o){console.log(o),wx.showLoading({title:"正在加载信息..."})},loadMemberInfo:function(){}});

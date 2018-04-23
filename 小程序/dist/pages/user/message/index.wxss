@@ -1,0 +1,111 @@
+.swiper {
+  width: 100%;
+  height: 360rpx;
+  margin-bottom: 20rpx;
+  background-color: #FFF;
+  border-bottom: 1px solid  #DDD;
+  overflow: hidden;
+}
+.swiper .item {
+  position: relative;
+}
+.swiper .item .image {
+  width: 100%;
+}
+.swiper .item .nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.wrap {
+  margin-bottom: 20rpx;
+  padding: 10rpx 1%;
+  border-top: 1rpx solid  #DDD;
+  border-bottom: 1rpx solid #DDD;
+  background-color: #FFF;
+}
+.wrap > .title {
+  position: relative;
+  padding: 20rpx 0 30rpx 2%;
+}
+.wrap > .title .heading {
+  text-align: left;
+  font-size: 32rpx;
+}
+.wrap > .title .navigator {
+  position: absolute;
+  top: 28rpx;
+  right: 0;
+  padding-right: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.wrap > .title .navigator:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  display: inline-block;
+  margin-top: -7rpx;
+  height: 14rpx;
+  width: 14rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #666;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.wrap > .content {
+  width: 100%;
+  overflow: hidden;
+}
+.wrap > .content .box {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 20rpx;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+.wrap > .content .box .images {
+  width: 100%;
+  height: 180rpx;
+  overflow: hidden;
+}
+.wrap > .content .box .images image {
+  width: 100%;
+  max-height: 220rpx;
+}
+.wrap > .content .box .title {
+  padding: 10rpx 0 5rpx;
+  font-size: 28rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.wrap > .content .box .time {
+  padding: 0;
+  color: #666;
+  font-size: 24rpx;
+}
+.wrap > .content.full .box {
+  display: block;
+  width: 96%;
+  margin: 0 auto 20rpx;
+  padding: 0 0 10rpx;
+  float: none;
+  border: 1px solid  #DDD;
+}
+.wrap > .content.full .box .images {
+  height: 320rpx;
+  overflow: hidden;
+}
+.wrap > .content.full .box .images image {
+  max-height: 320rpx;
+}
+.wrap > .content.full .box .title {
+  padding: 10rpx 2%;
+}

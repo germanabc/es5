@@ -1,0 +1,5 @@
+
+<view class="member">
+  <view class="pic"></view>
+</view>
+<include src="../footer.wxml"></include>

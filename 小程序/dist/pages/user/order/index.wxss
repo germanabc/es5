@@ -1,0 +1,77 @@
+.swiper-tab {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  z-index: 9;
+  background-color: #FFF;
+  border-bottom: 1px solid  #DDD;
+}
+.swiper-tab .swiper-tab-list {
+  display: inline-block;
+  width: 25%;
+  height: 50px;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.swiper-tab .swiper-tab-list .small {
+  display: inline-block;
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.swiper-tab .swiper-tab-list.active {
+  color: #0AF;
+  border-bottom: 1px solid  #0AF;
+}
+.list {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAA0ADUDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECCP/EACgQAAECBQMEAgMBAAAAAAAAAAEAEQIhMUFhUXGhEpHB8FLhsdHxgf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A6Vc3Nec1VQd6XnvmqB55QW1XQTGs/tAER788oDxNKJtTrygT385QUG7/AHmqAxpVAzrfzVABcCb3+6oIIpPXzygEkX6fPYoLYoD/AO33QR/55QP7vlBQaTrzlABnWRv5CA7GrPXPKCDeZmgF93n7NAmfP7QXk/nlAbPutUE935QOqH5MdTflA0Lu6ACG1ee+aoFab15QWW/tUEJn73QW+TPfKADIF639KBPvNAD+/lAenffKA8/Z8oD0m998oDh6u8/tBOsCZiZ769igQzjaxDnhAERMMB1mUEB6oYSb1QAZwD5w9R3QSCLq6XuHO6DRNMh+zftBmOMwgNdB/9k=);
+  overflow: auto;
+  z-index: 2;
+}
+.list.none {
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+.list .box {
+  position: relative;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  background-color: #FFF;
+  border-bottom: 1px solid  #EEE;
+  overflow: hidden;
+}
+.list .box .content {
+  position: relative;
+  width: 98%;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 1%;
+  overflow: hidden;
+}
+.list .box .content .name {
+  display: inline-block;
+  font-size: 28rpx;
+  width: 70px;
+  color: #939CA5;
+  text-align: right;
+}
+.list .box .content .value {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 28rpx;
+  color: #333;
+}
+.list .box .content .value.danger {
+  color: #FE5151;
+}
+.list .box .content .value.primary {
+  color: #0AF;
+}

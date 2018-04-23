@@ -1,0 +1,14 @@
+
+<view class="class">
+  <view wx:if="{{classList}}" class="list">
+    <view wx:for="{{classList}}" bindtap="getClassInfo" data-id="{{item.classTypeId}}" data-cid="{{item.itemOneId}}" class="box">
+      <view class="cover">
+        <image src="{{item.cover}}" mode="widthFix"></image>
+      </view>
+      <view class="content"> 
+        <view class="name">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<include src="../../footer.wxml"></include>

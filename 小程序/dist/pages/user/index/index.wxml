@@ -1,0 +1,19 @@
+
+<view bindtap="checkMember" class="member">
+  <view wx:if="{{userId}}" class="setbtn"></view>
+  <view data-id="user" class="pic">
+    <image src="{{headPicMax || '../../../images/person.png' }}" data-id="user"></image>
+  </view>
+  <view data-id="user" wx:if="{{userId}}" class="name">{{name || username}}</view>
+  <view data-id="user" wx:else="wx:else" class="name">登录/注册</view>
+  <view data-id="user" wx:if="{{userId}}" class="slogen">{{userSign || '这位童鞋很懒，什么也没留下'}}</view>
+</view>
+<view wx:for="{{memberMenu}}" class="menus">
+  <view wx:for="{{item}}" wx:for-item="j" data-id="{{j.id}}" data-target="{{j.target}}" bindtap="linkTarget" class="menu_item {{j.id}}">{{j.name}}
+    <view wx:if="{{j.after}}" class="line"></view>
+  </view>
+</view>
+<view wx:if="{{userId}}" class="menus white_space">
+  <view bindtap="logout" class="logout">退出登录</view>
+</view>
+<include src="/pages/footer.wxml"></include>

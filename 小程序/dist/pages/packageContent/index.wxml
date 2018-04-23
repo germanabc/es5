@@ -1,0 +1,96 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view wx:if="{{show}}" style="height:{{bannerheight}}" class="banner">
+  <view style="height:{{bannerheight}}" class="images">
+    <image src="{{cover}}" mode="top" style="height:{{bannerheight}}"></image>
+  </view>
+  <view wx:if="{{playid}}" class="video">
+    <video id="{{playid}}" src="{{video.src}}" autoplay="true" class="player"></video>
+  </view>
+</view>
+<view wx:if="{{show}}" class="class-content">
+  <view bindtap="changeTab" class="swiper-tab">
+    <view data-index="1" class="swiper-tab-list {{currentTab==1? 'active':''}}">详情</view>
+    <view data-index="0" class="swiper-tab-list {{currentTab==0? 'active':''}}">阶段课程</view>
+  </view>
+  <view class="swiper-contents">
+    <!-- wx:for="{{list}}"-->
+    <view wx:if="{{currentTab==0}}" class="swiper-contents-tabs cols"> 
+      <view class="video">
+        <view class="packagebox">
+          <view class="c_title">测试一下课程包的新名字
+            <view class="infopack">
+              <view class="info_left">共2门课程</view>
+              <view class="info_right">200</view>
+            </view>
+          </view>
+          <view class="c_list">
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+          </view>
+        </view>
+        <view class="packagebox">
+          <view class="c_title">测试一下课程包的新名字
+            <view class="infopack">
+              <view class="info_left">共2门课程</view>
+              <view class="info_right free">免费</view>
+            </view>
+          </view>
+          <view class="c_list">
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+            <view class="c_box"> 
+              <view class="img"> </view>
+              <view class="c_box_t">课程包列表1</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==1}}" class="swiper-contents-tabs">
+      <view class="part">
+        <view class="classTitle">{{classsTitle}}</view>
+        <view class="info">
+          <view class="half">购买人数：{{buyNum}}</view>
+          <view class="half">课时数：{{courseHour}}</view>
+        </view>
+        <view class="other">
+          <view class="price {{realPrice?'':'free'}}">{{realPrice?realPrice:'免费'}} </view>
+          <view class="times">课程有效期：{{yxq}}</view>
+        </view>
+      </view>
+      <view class="part">
+        <view class="classinfo">
+          <view class="title">课程包详情</view>
+          <view wx:if="{{detailDesc}}" class="swiper_tabs_content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+          </view>
+          <view wx:else="wx:else" class="swiper_tabs_content">暂无课程内容介绍</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

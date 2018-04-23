@@ -1,0 +1,38 @@
+
+<view wx:if="{{showtoolbar}}" class="toolbar">
+  <view class="menu home {{pageIndex==0? 'active':''}}"><block wx:if="{{pageIndex == 0}}">
+        <view class="text">首页</view>
+    </block>
+    <block wx:else>
+        <navigator open-type="redirect" class="rec_url" url="/pages/index/index"></navigator>
+        <view class="text">首页</view>
+    </block>
+  </view>
+  <view class="menu class {{pageIndex==1? 'active':''}}">
+    <block wx:if="{{pageIndex == 1}}">
+        <view class="text">课程</view>
+    </block>
+    <block wx:else>
+        <navigator open-type="redirect" class="rec_url" url="/pages/list/index"></navigator>
+        <view class="text">课程</view>
+    </block>
+  </view>
+  <view class="menu package {{pageIndex==3? 'active':''}}">
+    <block wx:if="{{pageIndex == 3}}">
+        <view class="text">课程包</view>
+    </block>
+    <block wx:else>
+        <navigator open-type="redirect" class="rec_url" url="/pages/package/index"></navigator>
+        <view class="text">课程包</view>
+    </block>
+  </view>
+  <view class="menu my {{pageIndex==2? 'active':''}}">
+    <block wx:if="{{pageIndex == 2}}">
+        <view class="text">我的</view>
+    </block>
+    <block wx:else>
+        <navigator open-type="redirect" class="rec_url" url="/pages/user/index/index"></navigator>
+        <view class="text">我的</view>
+    </block>
+  </view>
+</view>

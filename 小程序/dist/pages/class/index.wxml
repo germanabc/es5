@@ -1,0 +1,92 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view wx:if="{{show}}" style="height:{{bannerheight}}" class="banner">
+  <view style="height:{{bannerheight}}" class="images">
+    <image src="{{cover}}" mode="top" style="height:{{bannerheight}}"></image>
+  </view>
+  <view wx:if="{{playid}}" class="video">
+    <video id="{{playid}}" src="{{video.src}}" autoplay="true" class="player"></video>
+  </view>
+</view>
+<view wx:if="{{show}}" class="class-content">
+  <view bindtap="changeTab" class="swiper-tab">
+    <view data-index="1" class="swiper-tab-list {{currentTab==1? 'active':''}}">详情</view>
+    <view data-index="0" class="swiper-tab-list {{currentTab==0? 'active':''}}">目录</view>
+  </view>
+  <view class="swiper-contents">
+    <view wx:if="{{currentTab==0}}" bindtap="selectType" class="class-type">
+      <view data-type="video" class="type-sub video {{class_type=='video'?'active':''}}"> 
+        <view data-type="video" class="t">录播(11)
+          <view data-type="video" class="i"></view>
+        </view>
+      </view>
+      <view data-type="live" class="type-sub live {{class_type=='live'?'active':''}}"> 
+        <view data-type="live" class="t">直播(11)
+          <view data-type="live" class="i"></view>
+        </view>
+      </view>
+      <view data-type="face" class="type-sub face {{class_type=='face'?'active':''}}"> 
+        <view data-type="face" class="t">面授(11)
+          <view data-type="face" class="i"></view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==0}}" wx:for="{{list}}" class="swiper-contents-tabs cols">
+      <view wx:if="{{classType=='video' || classType=='remote'}}" class="video">
+        <view class="c_title">{{item.chapterName}}</view>
+        <view class="c_list">
+          <view wx:for="{{item.lectures}}" wx:for-item="j" data-type="{{classType}}" data-storage="{{j.storageType}}" data-id="{{j.id}}" data-mid="{{item.moduleId}}" data-vid="{{j.webVideoId||j.videoCcId}}" bindtap="getVideo" class="c_box">
+            <view class="c_list_name">{{j.lectureName||'未命名'}}  {{j.fileType}}
+              <view class="icon {{j.fileType}}"></view>
+            </view>
+            <view class="c_infos">
+              <view class="c_state primary">{{studyStatus[j.studyStatus]}}</view>
+              <view class="c_state time">{{j.videoTime}}
+                <view class="icon"></view>
+              </view>
+              <view class="c_state right {{freeFlagStyle[j.freeFlag]}}">{{freeFlag[j.freeFlag]}} </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else="wx:else" class="video live">
+        <view class="c_title">{{item.chapterName}} </view>
+        <view class="c_list">
+          <view wx:if="{{item.lectures.length}}">
+            <view wx:for="{{item.lectures}}" wx:for-item="j" data-type="{{classType}}" data-id="{{j.lessonId}}" data-mid="{{j.liveroomIdGh||j.liveroomNo}}" data-liveid="{{j.liveroom}}" data-status="{{j.status}}" data-live="{{j.liveCompanyType}}" bindtap="getVideo" class="c_box">
+              <view class="c_list_name">{{j.lessonName||'未设置课程名称'}}  {{j.fileType}}</view>
+              <view class="c_infos">
+                <view class="c_state time">{{j.lessonDate}} {{j.lessonTimeStart}}-{{j.lessonTimeEnd}}
+                  <view class="icon"></view>
+                </view>
+                <view class="c_state right {{freeFlagStyle[j.freeFlag]}}">{{j.status}}</view>
+              </view>
+            </view>
+          </view>
+          <view wx:else="wx:else" class="nothing">暂无{{item.chapterName}}课次</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==1}}" class="swiper-contents-tabs">
+      <view class="part">
+        <view class="classTitle">{{classsTitle}}</view>
+        <view class="info">
+          <view class="half">购买人数：{{buyNum}}</view>
+          <view class="half">课时数：{{courseHour}}</view>
+        </view>
+        <view class="other">
+          <view class="price {{realPrice?'':'free'}}">{{realPrice?realPrice:'免费'}} </view>
+          <view class="times">课程有效期：{{yxq}}</view>
+        </view>
+      </view>
+      <view class="part">
+        <view class="classinfo">
+          <view class="title">课程介绍</view>
+          <view wx:if="{{detailDesc}}" class="swiper_tabs_content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+          </view>
+          <view wx:else="wx:else" class="swiper_tabs_content">暂无课程内容介绍</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

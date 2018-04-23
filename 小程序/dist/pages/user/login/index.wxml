@@ -1,0 +1,72 @@
+
+<view wx:if="{{show=='login'}}" class="show">
+  <view class="member-login">
+    <view class="section">
+      <input placeholder="手机号/用户名" maxlength="16" value="{{user.mobile}}" bindinput="getChange" data-id="user.mobile" class="section_input"/>
+      <view wx:if="{{user.mobile}}" bindtap="clearInput" data-id="user.mobile" class="clearinput"></view>
+    </view>
+    <view class="section">
+      <input placeholder="登录密码" maxlength="16" password="false" value="{{user.password}}" bindinput="getChange" data-id="user.password" class="section_input"/>
+      <view wx:if="{{user.password}}" bindtap="clearInput" data-id="user.password" class="clearinput"></view>
+    </view>
+  </view>
+  <view class="login_btn"> 
+    <view bindtap="checklogin" class="button {{user.btnstate?'':'active'}}">登录</view>
+    <view bindtap="changePage" data-page="forget" class="left">忘记密码</view>
+  </view>
+  <view bindtap="changePage" data-page="register" wx:if="{{!closeFlag}}" class="footer_btn"> 没有账号，
+    <view bindntap="changePage" data-page="register" wx:if="{{!closeFlag}}" class="primary">去注册</view>
+  </view>
+</view>
+<view wx:if="{{show=='forget'}}" class="show">
+  <view class="member-login">
+    <view class="section">
+      <input placeholder="注册时使用的手机号" maxlength="11" value="{{forget.mobile}}" bindinput="getChange" data-id="forget.mobile" class="section_input"/>
+      <view wx:if="{{forget.mobile}}" bindtap="clearInput" data-id="forget.mobile" class="clearinput"></view>
+    </view>
+    <view class="section">
+      <input placeholder="短信验证码" maxlength="6" bindinput="getChange" data-id="forget.smsCode" class="section_input code"/>
+      <button size="mini" bindtap="sendsms" disabled="{{forgetPage.smsstate}}" class="sendsms">{{forgetPage.smsbtn}}</button>
+    </view>
+    <view class="section">
+      <input placeholder="长度6-16数字+字母组合" maxlength="16" password="true" value="{{forget.newPwd}}" bindinput="getChange" data-id="forget.newPwd" class="section_input"/>
+      <view wx:if="{{forget.newPwd}}" bindtap="clearInput" data-id="forget.newPwd" class="clearinput"></view>
+    </view>
+  </view>
+  <view class="login_btn"> 
+    <view bindtap="checkForget" class="button {{forgetPage.btnstate?'':'active'}}">修改密码</view>
+  </view>
+  <view bindtap="changePage" data-page="login" class="footer_btn"> 已有账号，
+    <view bindntap="changePage" data-page="login" class="primary">返回登录</view>
+  </view>
+</view>
+<view wx:if="{{show=='register'}}" class="show">
+  <view class="member-login">
+    <view wx:if="{{usernameFlag}}" class="section">
+      <input placeholder="用户名 长度3-16字母" maxlength="16" value="{{register.username}}" bindinput="getChange" data-id="register.username" class="section_input"/>
+      <view wx:if="{{register.username}}" bindtap="clearInput" data-id="register.username" class="clearinput"></view>
+    </view>
+    <view wx:if="{{mobileFlag}}" class="section">
+      <input placeholder="常用手机号" maxlength="11" value="{{register.mobile}}" bindinput="getChange" data-id="register.mobile" class="section_input"/>
+      <view wx:if="{{register.mobile}}" bindtap="clearInput" data-id="register.mobile" class="clearinput"></view>
+    </view>
+    <view class="section">
+      <input placeholder="输入密码 长度6-16数字+字母组合" value="{{register.password}}" maxlength="16" password="true" bindinput="getChange" data-id="register.password" class="section_input"/>
+      <view wx:if="{{register.password}}" bindtap="clearInput" data-id="register.password" class="clearinput"></view>
+    </view>
+    <view wx:if="{{mobileFlag}}" class="section">
+      <input placeholder="手机短信验证码" maxlength="6" bindinput="getChange" data-id="register.smsCode" class="section_input code"/>
+      <button size="mini" bindtap="sendsms" disabled="{{registerPage.smsstate}}" class="sendsms">{{registerPage.smsbtn}}</button>
+    </view>
+  </view>
+  <view class="login_btn"> 
+    <view bindtap="registerMember" class="button {{registerPage.btnstate?'':'active'}}">注册</view>
+    <view class="long">注册代表接受
+      <view class="primary">《注册协议》</view>
+    </view>
+  </view>
+  <view bindtap="changePage" data-page="login" class="footer_btn">已有账号，
+    <view bindtap="changePage" data-page="login" class="primary">去登录</view>
+  </view>
+</view>
+<include src="../../footer.wxml"></include>
