@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态路由匹配</title>
+</head>
+<body>
+
+  <div id="app">
+  	  <p>
+  	  	 <router-link to="/user/foo"> 111</router-link>
+  	  	 <router-link to="/user/bar"> 222</router-link>
+  	  </p>
+  	  <router-view></router-view>
+  </div>
+	
+</body>
+
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+ <script>
+ 	const user={
+ 		template: '<div>user {{$route.params.id}}</div>',
+ 		//对路由变化做出响应
+ 		watch:{
+ 			'$route' (to, from){
+ 				alert('变化后')
+ 			}
+ 		},
+ 	}
+
+ 	const router=new VueRouter({
+ 		routes:[
+            {path: '/user/:id',component: user}
+ 		]
+ 	})
+
+
+ 	new Vue({
+ 		el:'#app',
+ 		router
+ 	})
+ </script>	
+</html>
