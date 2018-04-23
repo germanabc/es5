@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>removeNode</title>
+</head>
+<style>
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
+.son {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}
+</style>
+
+<body>
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p id="demo">点击按钮来删除列表中的首个项目。</p>
+    <button id="button">试一下</button>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+$(function() {
+
+	$('#button').on('click',function(){
+		// debugger;
+		// var list = document.getElementById("myList");
+		// var p = document.getElementById("demo");
+		var p = $("#demo")[0];
+        // list.removeChild(list.childNodes[0]);
+       //  console.log(list.childNodes[0])
+         $("#demo")[0].parentNode.removeChild(p);
+
+	})
+   
+})
+</script>
+
+</html>

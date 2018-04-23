@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+
+
+
+<body>
+    <p>我是insertAfter </p>
+    <div id="foo">Hello</div>
+    <hr>
+    <div id="doo">Hello</div>
+    <h1>我是insertBefore </h1>
+
+    <hr>
+
+
+    <div id="effectshowBox">
+    	<select class="wid198" data-style="touchAddEff">
+        <option value="无">无</option>
+        <option value="摇摆">摇摆</option>
+        <option value="抖动">抖动</option>
+        <option value="旋转">旋转</option>
+        <option value="翻转">翻转</option>
+        <option value="悬摆">悬摆</option>
+        <option value="闪烁">闪烁</option>
+        <option value="上滑">上滑</option>
+        <option value="下滑">下滑</option>
+        <option value="放大抖动">放大抖动</option>
+        <option value="倾斜抖动">倾斜抖动</option>
+        </select>
+    </div>
+
+</body>
+<script src="jquery.min.js"></script>
+<script>
+// $("p").insertAfter("#foo");
+// $("h1").insertBefore("#doo");
+
+// var arr = [1, 2];
+// console.log(arr);
+// var a = arr[0];
+
+
+// arr[0] = arr[1];
+// arr[1] = a;
+
+// console.log(arr);
+
+$('#effectshowBox').find("select").val('抖动');
+</script>
+
+</html>
