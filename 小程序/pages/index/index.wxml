@@ -1,0 +1,12 @@
+<import src="../logs/logs.wxml" />
+
+<template is="item" data="{{text: 'forbar'}}"></template>
+
+<view id="outer" bind:touchstart="handleTap1" capture-catch:touchstart="handleTap2">
+  outer view
+  <view id="inner" bind:touchstart="handleTap3" capture-bind:touchstart="handleTap4">
+    inner view
+  </view>
+</view>
+
+<view data-alpha-beta="1" data-alphaBeta="2" bindtap="bindViewTap"> DataSet Test </view>
