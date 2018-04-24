@@ -331,12 +331,17 @@ var util = {
           // 微信支付
           if (res.data.result.status.code == 0) {
             wx.requestPayment({
+              // 即当前的时间
               timeStamp: res.data.result.data.timeStamp, 
+              // 随机字符串，长度为32个字符以下
               nonceStr: res.data.result.data.nonceStr,
+              // 统一下单接口返回的 prepay_id 参数值
               package: res.data.result.data.package,
+              // 签名算法，暂支持 MD5
               signType: res.data.result.data.signType,
+              // 签名方案
               paySign: res.data.result.data.paySign,
-
+              //接口调用成功的回调函数
               success: function (res) {
                 // success
                 console.log('pay success');
@@ -349,6 +354,7 @@ var util = {
                   console.log('error');
                 }
               },
+              //接口调用失败的回调函数
               fail: function (e) {
                 // fail
                 console.log(res);
@@ -356,6 +362,7 @@ var util = {
                 console.log('用户取消充值了');
                 //_this.noOpen(e.err_desc);
               },
+              //接口调用结束的回调函数
               complete: function () {
                 // complete
               }

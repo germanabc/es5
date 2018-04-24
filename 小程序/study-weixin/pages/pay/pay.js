@@ -1,13 +1,17 @@
 //logs.js
 Page({
-  data: {
-    logs: []
-  },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        // return util.formatTime(new Date(log))
-      })
+  clickPay: function () {
+    console.log('zhifu ')
+    wx.requestPayment(
+      {
+      'timeStamp': '',
+      'nonceStr': '',
+      'package': '',
+      'signType': 'MD5',
+      'paySign': '',
+      'success':function(res){},
+      'fail':function(res){},
+      'complete':function(res){}
     })
   }
 })

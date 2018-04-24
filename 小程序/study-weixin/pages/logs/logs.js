@@ -6,7 +6,7 @@ Page({
   onLoad: function() {
   },
   navigateTo: function(){
-   console.log(1)
+
     wx.navigateTo({
       url: '../pay/pay',
       success: function(res){
