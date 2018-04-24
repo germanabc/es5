@@ -1,14 +1,23 @@
 //logs.js
 Page({
-
-  data: {
-    logs: []
+  // data: {
+  //   logs: []
+  // },
+  onLoad: function() {
   },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
+  navigateTo: function(){
+   console.log(1)
+    wx.navigateTo({
+      url: '../pay/pay',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
     })
   }
 })

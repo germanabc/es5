@@ -1,0 +1,57 @@
+
+page {
+background-color:#F8F8F8;
+height:100%;
+font-size:32rpx;
+line-height:1.6;
+}
+.page-body {
+width:100%;
+flex-grow:1;
+overflow-x:hidden;
+
+  }
+
+.page-section {
+width:auto;
+margin:30rpx;
+padding:64rpx 30rpx;
+background-color:#fff;
+text-align:center;
+font-size:28rpx;
+margin-bottom:0;
+}
+.page-section .titie{
+  font-size: 24rpx;
+}
+.price {
+margin-top:30rpx;
+margin-bottom:25rpx;
+position:relative;
+display:inline-block;
+font-size:78rpx;
+line-height:1;
+}
+.price:before{
+  content: "¥";
+  position: absolute;
+  font-size: 40rpx;
+  top: 8rpx;
+  left: -40rpx;
+}
+.desc{
+  color:#B2B2B2;
+font-size:24rpx;
+
+}
+
+.btn-area {
+margin-top:60rpx;
+box-sizing:border-box;
+width:100%;
+padding:0 30rpx;
+
+}
+
+
+

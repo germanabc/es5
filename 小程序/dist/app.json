@@ -1,9 +1,9 @@
 {
     "pages": [
       
+        "pages/index/index",
         "pages/package/index",
         "pages/list/index",
-        "pages/index/index",
         "pages/class/index",
         "pages/search/index",
         "pages/packageContent/index",

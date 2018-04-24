@@ -1,0 +1,11 @@
+<view class="page-body">
+<view class="page-section">
+   <view class="titie">支付金额</view>
+   <view class="price">0.01</view>
+   <view class="desc">实际接口应用中可自定义金额</view>
+   <view class="btn-area">
+    <button type="primary">支付</button>
+   </view>
+   
+</view>
+</view>
