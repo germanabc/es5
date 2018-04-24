@@ -3,7 +3,7 @@
     <h2>wellcom vue</h2>
     <input type="button" value="增加" @click="increment">
     <input type="button" value="减少" @click="decrement">
-    <input type="button" value="偶数才能点击" @click="clickOdd">
+    <input type="button" value="偶数才能点击+" @click="clickOdd">
     <input type="button" value="点击异步" @click="clickAsync">
     <div>现在的值为: {{count}}, 它现在是{{getOdd}}</div>
   </div>
