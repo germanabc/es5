@@ -76,6 +76,7 @@ var util = {
       reqData.user_id = sucData.user_id;//用户ID【1.01版本新增】
       reqData.app_token = md5.hexMD5(reqData.device_id + '#' + reqData.req_time + '#' + _this.secret);
 
+      //发起ajax请求
       wx.request({
         url: options.url,
         data: reqData,
