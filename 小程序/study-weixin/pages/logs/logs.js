@@ -5,19 +5,19 @@ Page({
   // },
   onLoad: function() {
   },
-  navigateTo: function(){
+  // tiaozhaun: function(){
 
-    wx.navigateTo({
-      url: '../pay/pay',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  }
+  //   wx.navigateTo({
+  //     url: '../pay/pay',
+  //     success: function(res){
+  //       // success
+  //     },
+  //     fail: function() {
+  //       // fail
+  //     },
+  //     complete: function() {
+  //       // complete
+  //     }
+  //   })
+  // }
 })

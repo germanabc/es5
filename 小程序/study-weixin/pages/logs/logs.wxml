@@ -1,6 +1,6 @@
 
 
 <navigator url="../pay/pay">
-<button bindtap="navigateTo" class="form-pay" size="mini">发起支付</button>
+<button bindtap="tiaozhaun" class="form-pay" size="mini">发起支付</button>
 </navigator>
 
