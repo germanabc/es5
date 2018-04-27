@@ -90,6 +90,7 @@ var util = {
               res.data = JSON.parse(res.data);
             } catch (e) {
             }
+            // 掉起微信支付
             options.success(res);
           }
         },
