@@ -24,13 +24,19 @@
 			'loading',
 			'footerShow'
 		]),
+		// el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子函数
 		mounted(){
+			// 路由信息对象 this.$route
+			console.log('this',this)
 			var path=this.$route.path.substring(1);
+		  console.log('path',path) //Home
 			this.headerChange(path);
 			this.footerChange(path);
 		},
+		// 观察 Vue 实例变化的一个表达式或计算属性函数, 当 router 变化时触发该函数
 		watch:{
 			$route(to){
+				console.log('to',to) //$router对象
 				var path=to.path.substring(1);
 				this.headerChange(path);
 				this.footerChange(path);
@@ -46,13 +52,14 @@
 			},
 			footerChange(path){
 				if(path.indexOf('article')==-1){
+					// Action 通过 store.dispatch 方法触发：
 					this.$store.dispatch('showFooter');
 				}else{
 					this.$store.dispatch('hideFooter');
 				}
 			}
 		},
-		components:{
+		components:{ //注册组件
 			Home,
 			NavHeader,
 			FooterView
