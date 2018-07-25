@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script src="vue.js"></script>
+
+<body>
+    <div id="box">
+        <aaa>
+        </aaa>
+    </div>
+
+    <template id="aaa">
+        <div>
+            <span>我是父级 --- {{msg}}</span>
+            <bbb v-on:child-msg="get"></bbb>
+        </div>
+    </template>
+
+    <template id="bbb">
+        <div>
+            <h3>子组件</h3>
+            <input type="button" value="send" v-on:click="send">
+        </div>
+    </template>
+
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                a: 'aaa'
+            },
+            components: {
+                'aaa': {
+                    data() {
+                        // 组件里面的数据必须返回一个对象
+                        return {
+                            msg: 111,
+                            msg2: '我是父组件的数据'
+                        }
+                    },
+                    template: '#aaa',
+                    methods: {
+                        get(msg) {
+                            // msg形参就是传回来的数据
+                            this.msg = msg;
+                        }
+                    },
+                    components: {
+                        'bbb': {
+                            data: function () {
+                                return {
+                                    a: '我是子组件的数据'
+                                }
+                            },
+                            template: '#bbb',
+                            methods: {
+                                send: function () {
+                                    this.$emit('child-msg', this.a);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+
+
+</html>

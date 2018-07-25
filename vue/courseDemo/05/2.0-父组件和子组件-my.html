@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2.0-父组件和子组件-my</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+    window.onload = function() {
+        new Vue({
+            el: '#box',
+            data: {
+                // giveData: {
+                    a: '我是父组件数据'
+                // }
+            },
+            components: {
+                'child-com': {
+                    data:function(){
+                       return {
+                         b:''
+                       }
+                    },
+                    props: ['msg'],
+                    template: '#child',
+                    mounted: function(){
+                      this.b=this.msg
+                    },
+                    methods: {
+                        change: function() {
+                            this.b = '被更改了'
+                        }
+                    }
+                }
+            }
+        });
+    };
+    </script>
+</head>
+
+<body>
+    <template id="child">
+        <!-- //使用组件时应该使用div或者p标签包裹起来 -->
+        <div>
+            <span>我是子组件</span>
+            <input type="button" value="按钮" @click="change">
+            <strong>{{b}}</strong>
+        </div>
+    </template>
+
+    <div id="box">
+        父级———{{a}}
+        <br>
+        <!-- sync 对props 进行双向绑定 -->
+        <child-com :msg.sync="a"></child-com>
+    </div>
+</body>
+
+</html>

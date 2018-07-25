@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04命名路由</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+const Home = { template: '<div>This is Home</div>' }
+const Foo = { template: '<div>This is Foo</div>' }
+const Bar = { template: '<div>This is Bar }</div>' }
+
+
+const router = new VueRouter({
+    routes: [
+
+        {
+            path: '/',
+            name: 'home',
+            component: Home,
+        },
+
+        {
+            path: '/foo',
+            name: 'foo',
+            component: Foo,
+        },
+
+        {
+            path: '/bar',
+            name: 'bar',
+            component: Bar,
+        }
+
+
+    ]
+})
+
+
+new Vue({
+	el: '#app',
+    router,
+    template: `
+	 <div id="app">
+	 <h1>Named Routes</h1>
+     <p>Current route name: {{ $route.name }}</p>
+
+     <router-link :to="{ name: 'home' }">home</router-link>
+     <router-link :to="{ name: 'foo' }">foo</router-link>
+     <router-link :to="{ name: 'bar'}">bar</router-link>
+     <router-view class="view"></router-view>
+	  </div>
+
+    `
+})
+</script>
+
+</html>
