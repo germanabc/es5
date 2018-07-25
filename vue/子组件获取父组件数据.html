@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script src="vue.js"></script>
+
+<body>
+    <div id="box">
+        <aaa></aaa>
+    </div>
+     <!-- 设置一个模板 -->
+    <template id="aaa">
+        <div>
+            <h1>1111</h1>
+            <!-- 驼峰命名必须用—— 隔开 -->
+            <bbb :mmm="msg2" :my-Msg="msg"></bbb>
+        </div>
+    </template>
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                a: 'aaa'
+            },
+            components: {
+                'aaa': {
+
+                    data() {
+                        // 组件里面的数据必须返回一个对象
+                        return {
+                            msg: 111,
+                            msg2: '我是父组件的数据'
+                        }
+                    },
+                    template: '#aaa',
+                    components: {
+                        'bbb': {
+                            // props: {
+                            //     'mmm': String,
+                            //     'myMsg': Number
+                            // },
+                            props:['mmm','myMsg'],
+                            template: '<h3>我是bbb组件  <p>{{mmm}}</p> <br/> {{myMsg}} </h3>'
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+
+</html>

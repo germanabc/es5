@@ -1,5 +1,5 @@
 const paymentUrl = require("../../utils/config").paymentUrl;
-console.log("paymentUrl", paymentUrl);
+// console.log("paymentUrl", paymentUrl);
 
 //获取小程序实例getApp()，得到它上面的所有属性和方法
 var app = getApp()
@@ -7,7 +7,7 @@ var app = getApp()
 Page({
   onLoad: function() {
   },
-  requestPayment: function() {
+  clickPay: function() {
     var self = this  //保存Page函数实例对象
     //支付按钮显示正在加载状态
     self.setData({
@@ -19,6 +19,7 @@ Page({
     // console.log('zhifu ')
     // console.log(wx)
 
+    //调用app.js里面的getUserOpenId函数，传回openid，然后执行回调函数
     app.getUserOpenId(function(err, openid) {
       if (!err) {
         console.log("获取的err", err);

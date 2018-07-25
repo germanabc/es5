@@ -3,9 +3,9 @@
 		<loading v-if="loading"></loading>
 		<NavHeader v-show="headShow"></NavHeader>
 		<transition name="slide-down">
-			<keep-alive>
+		 	 <keep-alive>
 	        	<router-view class="router-view"></router-view>
-	      	</keep-alive>
+	     </keep-alive>
 		</transition>
 		<FooterView v-show="footerShow"></FooterView>
 	</div>
@@ -24,12 +24,20 @@
 			'loading',
 			'footerShow'
 		]),
+	  components:{ //注册组件
+			Home,
+			NavHeader,
+			FooterView
+		},
 		// el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子函数
 		mounted(){
 			// 路由信息对象 this.$route
-			console.log('this',this)
+			console.log('this',this) //VueComponent
 			var path=this.$route.path.substring(1);
-		  console.log('path',path) //Home
+			// console.log('mounted-path',path) //Home
+			console.log('this.$route.path',this.$route.path) //Home
+			
+			//初始化页面时候让头部和尾部展示出来
 			this.headerChange(path);
 			this.footerChange(path);
 		},
@@ -38,32 +46,39 @@
 			$route(to){
 				console.log('to',to) //$router对象
 				var path=to.path.substring(1);
+
+      	console.log('watch-path',path)
+
 				this.headerChange(path);
 				this.footerChange(path);
 			}
 		},
 		methods:{
 			headerChange(path){
+
+				console.log('headerChange-path',path)
+				// Action 通过 store.dispatch 方法触发：
 				if(path=='user-info' || path=='user-reg' || path=='user-login' || path.indexOf('article')!=-1){
+					//提交 状态，等同于 Action  commit('SHOW_HEAD_FAIL')
 					this.$store.dispatch('SHOW_HEAD_FAIL')
 				}else{
+					//让头部显示
 					this.$store.dispatch('SHOW_HEAD_SUCC')
 				}
 			},
 			footerChange(path){
+
+					console.log('footerChange-path',path)
+				//判断是否是 二级article	
 				if(path.indexOf('article')==-1){
-					// Action 通过 store.dispatch 方法触发：
+					// Action 通过 store.dispatch 方法触发：让尾部显示
 					this.$store.dispatch('showFooter');
 				}else{
 					this.$store.dispatch('hideFooter');
 				}
 			}
-		},
-		components:{ //注册组件
-			Home,
-			NavHeader,
-			FooterView
 		}
+
 	}
 </script>
 <style>

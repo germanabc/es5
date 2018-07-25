@@ -15,6 +15,10 @@ const state={
 
 const mutations={
 	/*头部*/
+	// ES2015 计算属性命名功能来使用一个常量作为函数名,等同于['HEAD_SHOW_SUCCESS']
+	//等同于 HEAD_SHOW_SUCCESS(state){
+	// 	state.headShow=true;
+	// },
 	[HEAD_SHOW_SUCCESS](state){
 		state.headShow=true;
 	},

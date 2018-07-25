@@ -12,7 +12,10 @@ import filters from './filters'
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
 
 Vue.use(VueRouter);
+//自定义组件，使用Vue.use 来使用
 Vue.use(Loading);
+
+
 
 require('./assets/css/base.css'); //引入全局的base文件
 
@@ -44,9 +47,10 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 //axios.defaults.baseURL='http://localhost:8082/';
 Vue.prototype.$http = axios  //其他页面在使用axios的时候直接  this.$http就可以了
 
-new Vue({
+ new Vue({
   el: '#app',
   router,
   store:stores,
   render: h => h(App)
 })
+

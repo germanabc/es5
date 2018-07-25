@@ -13,13 +13,13 @@ var config = {
     host,
 
     // 登录地址，用于建立会话
-    loginUrl: `https://${host}/login`,
+    loginUrl: `http://[domain]/appApi/payOrder/miniProgramLogin`,
 
     // 测试的请求地址，用于测试会话
     requestUrl: `https://${host}/testRequest`,
 
     // 用code换取openId
-    openIdUrl: `https://${host}/openid`,
+    openIdUrl:`http://sdk.yunduoketang.cn/appApi/payOrder/miniProgramLogin`,
 
     // 测试的信道服务接口
     tunnelUrl: `https://${host}/tunnel`,

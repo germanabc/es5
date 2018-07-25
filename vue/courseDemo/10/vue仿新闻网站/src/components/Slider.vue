@@ -1,3 +1,5 @@
+
+//轮播图模块
 <template>
 	<div class="banner">
         <ul class="clearfix">
@@ -37,6 +39,7 @@
 <script>
 	export default {
 		mounted(){
+			// console.log('this.fnSlider',this);
 			this.fnSlider();
 		},
 		watch:{

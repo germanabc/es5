@@ -2,7 +2,7 @@
 	<div class="content mt40">
 	    <div class="newsList">
 	    	<ul>
-	            <li v-for="(item, index) in arrList">
+	            <li v-for="(item, index) in arrList" :key="item.id">
 	            	<a href="javascript:;">
 	                    <h2>{{index+1}} .{{item.title}}</h2>
 	                    <p>{{item.detail}}</p>

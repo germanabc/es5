@@ -34,6 +34,8 @@
 <script>
 	export default{
 		mounted(){
+			console.log(this)
+			console.log(this.$route)
 			this.fetchData(this.$route.params.id);
 
 			//发送 隐藏footer的 action
@@ -46,12 +48,17 @@
 				articleData:{}
 			}
 		},
+		//watch:  监听路由参数的变化
 		watch:{
 			$route(to){
-				//console.log(to);
+				// to: 即将要进入的目标的路由对象
+				console.log('to',to);
 				var reg=/article\/\d+/;
+				console.log('reg',reg);
 				if(reg.test(to.path)){
+					//路由变化，请求不同路径下的数据
 					var articleId=this.$route.params.id || 0;
+					console.log('articleId',articleId);
 					this.fetchData(articleId);
 				}
 			}
@@ -60,7 +67,7 @@
 			fetchData(id){
 				var _this=this;
 				this.$http.get('../src/data/article.data').then(function(res){
-					//console.log(res.data[id]);
+					 console.log('res.data[id]',res.data[id]);
 					_this.articleData=res.data[id];
 				}).catch(function(err){
 					console.log('文章详细页面:',err);

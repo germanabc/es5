@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 经度： -180.0～+180.0（整数部分为0～180，必须输入1到5位小数）
+		var j=/^[\-\+]?(0?\d{1,2}\.\d{1,5}|1[0-7]?\d{1}\.\d{1,5}|180\.0{1,5})$/;
+
+		// 纬度： -90.0～+90.0（整数部分为0～90，必须输入1到5位小数）
+		var w=/^[\-\+]?([0-8]?\d{1}\.\d{1,5}|90\.0{1,5})$/;
+
+		var a=25.1;
+		var b=25.1;
+   console.log(j.test(a)) 
+   console.log(w.test(b)) 
+
+	</script>
+</body>
+</html>

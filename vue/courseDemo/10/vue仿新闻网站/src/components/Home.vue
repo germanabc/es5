@@ -3,7 +3,7 @@
 		<Slider></Slider>
 	    <div class="newsList">
 	    	<ul>
-	            <li v-for="(item,index) in arrList">
+	            <li v-for="(item,index) in arrList" :key=item.id>
 	                <router-link :to="'/article/'+item.id">
 	                	<h2>{{index+1}} . {{item.title}}</h2>
 	                    <p>{{item.detail}}</p>
@@ -35,6 +35,7 @@
 					//console.log( res.data);
 					//setTimeout(function(){
 						_this.arrList=res.data;
+						// console.log('_this.arrList',_this.arrList)
 					//},1000);
 				}).catch(function(err){
 					console.log(err);
