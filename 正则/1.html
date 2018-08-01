@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <template>
+        <div class="demo">
+            <el-date-picker v-model="startDate" type="date" :picker-options="startOptions"></el-date-picker>
+            <el-date-picker v-model="endDate" type="date" :picker-options="endOptions"></el-date-picker>
+        </div>
+    </template>
+    <script>
+    function CheckPhone(number) {
+        var reg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$|^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$|^0\d{2,3}-?\d{7,8}$/;
+        return reg.test(number);
+    }
+
+   // var regexp=/^(0[0-9]{2,3}/-)?([2-9][0-9]{6,7})+(/-[0-9]{1,4})?$/;
+   // \d: 匹配数字
+
+     var regexp1=/(1[0-9]{10})$/
+   var regexp2=/(^(\d{3,4}-)+\d{7,8})/
+   var regexp=/(^(\d{3,4}-)+\d{7,8})|(1[0-9]{10})$/
+ 
+
+    console.log(regexp.test(12298327777))
+    // console.log(regexp.test(121-6666666))
+
+    // console.log(regexp2.test('123-6666666'))
+
+    </script>
+</body>
+
+</html>
